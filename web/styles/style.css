@@ -11,3 +11,16 @@ ul {
     list-style: none;
 }
 
+table {
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+table td,th {
+    padding-right: 10px;
+}
+
+#intro{
+    width: 400px;
+}
+

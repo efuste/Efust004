@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletResponse;
  */
 public class ControllerHelper extends HelperBase {
     
-    protected RequestDataDefault data = new RequestDataDefault();
+    protected MovieListValidation data = new MovieListValidation();
     
     public ControllerHelper ( HttpServlet servlet, HttpServletRequest request, HttpServletResponse response) {
         super(servlet, request, response);
@@ -41,7 +41,10 @@ public class ControllerHelper extends HelperBase {
             address = "process.jsp";
         } else if (request.getParameter("confirmButton") != null) {
             address = "confirm.jsp";
-        } else {
+        } else if (request.getParameter("wishListButton") != null) {
+            address = "wishlist.jsp";
+        }    
+        else {
             address = "edit.jsp";
         }
 

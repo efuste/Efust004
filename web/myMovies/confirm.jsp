@@ -7,10 +7,18 @@
 
     </head>
     <body>
-        <p>The Movie Title Entered was <strong>${myMovies.data.title}</strong></p>
-        <p>Note: <strong>${myMovies.data.note}</strong></p>
-        <p>The Movie is Rated: <strong>${myMovies.data.rating}</strong></p>
-
+        <h3>Confirm Movie Information</h3>
+        <div id="intro">
+            <p>
+                Hopefully once the movie information is confirmed it will be written to the database.  This will in the future allow 
+                for the data to be persistent and dedicated movie pages can be added with the details nicely formatted with more advanced
+                options.
+            </p>
+        </div>
+        
+        <div class="wishlist">
+           ${myMovies.data.movieInfo}
+        </div>    
         
 
         <form action="Controller" >
@@ -19,6 +27,8 @@
             <input type="hidden" name="rating" value="${myMovies.data.rating}">
             <input type="submit" name="editButton" value="Edit" />
             <input type="submit" name="processButton" value="Process" />
+            <input type="submit" name="wishListButton" value="Wish List" />
+
         </form>
        
         

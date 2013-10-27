@@ -8,8 +8,13 @@
         
     </head>
     <body>
-        <form action="">
-            <p>This is a simple HTML page that has a form in it.</p>
+        <h3>Add A Movie</h3>
+         <div id="intro">
+                <p>Add information about a movie such as title, a note (ex. great movie!), and the rating.  Adding a movie to your wishlist
+                   will allow you to keep track of movies you want to see or have seen.
+                </p>
+         </div>
+        <form action="Controller">
             <p>Title: <input type="text" name="title" value="${myMovies.data.title}"></p> 
             <p>My Note: <input type="text" name="note" value="${myMovies.data.note}"></p> 
             <p>Rating: <input type="text" name="rating" value="${myMovies.data.rating}"></p> 
