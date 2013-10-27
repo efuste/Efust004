@@ -17,23 +17,23 @@ import javax.servlet.http.HttpServletResponse;
  */
 public class ControllerHelper extends HelperBase {
     
-    protected MovieListValidation data = new MovieListValidation();
+    protected MovieListValidation movieData = new MovieListValidation();
     
     public ControllerHelper ( HttpServlet servlet, HttpServletRequest request, HttpServletResponse response) {
         super(servlet, request, response);
     }
     
-    public Object getData(){
-        return data;
+    public Object getMovieData(){
+        return movieData;
         
     }
     
     public void doGet() throws IOException, ServletException{
         request.getSession().setAttribute("myMovies", this);
         
-        data.setTitle(request.getParameter("title"));
-        data.setNote(request.getParameter("note"));
-        data.setRating(request.getParameter("rating"));
+        movieData.setTitle(request.getParameter("title"));
+        movieData.setNote(request.getParameter("note"));
+        movieData.setRating(request.getParameter("rating"));
         
         String address;
         

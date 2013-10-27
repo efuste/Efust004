@@ -17,14 +17,14 @@
         </div>
         
         <div class="wishlist">
-           ${myMovies.data.movieInfo}
+           ${myMovies.movieData.movieInfo}
         </div>    
         
 
         <form action="Controller" >
-            <input type="hidden" name="title" value="${myMovies.data.title}"> 
-            <input type="hidden" name="note" value="${myMovies.data.note}"> 
-            <input type="hidden" name="rating" value="${myMovies.data.rating}">
+            <input type="hidden" name="title" value="${myMovies.movieData.title}"> 
+            <input type="hidden" name="note" value="${myMovies.movieData.note}"> 
+            <input type="hidden" name="rating" value="${myMovies.movieData.rating}">
             <input type="submit" name="editButton" value="Edit" />
             <input type="submit" name="processButton" value="Process" />
             <input type="submit" name="wishListButton" value="Wish List" />

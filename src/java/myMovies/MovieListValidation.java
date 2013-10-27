@@ -12,7 +12,7 @@ public class MovieListValidation {
     protected String title;
     protected String note;
     protected String rating;
-
+    
     public String getTitle() {
         if(isValidMovieTitle()){
             return this.title;
@@ -35,7 +35,8 @@ public class MovieListValidation {
         }
         return "No Rating Provided";
     }
-
+    
+  
     public void setTitle(String title) {
         this.title = title;
     }
@@ -55,6 +56,8 @@ public class MovieListValidation {
     private boolean isValidMovieNote() {
         return this.note != null && !note.equals("");
     }
+    
+   
     
     
     private boolean isValidRating(){
@@ -86,11 +89,15 @@ public class MovieListValidation {
                "<td>" + this.rating + "</td>" + 
                "</tr>\n" + 
                "</table>";
+                       
+               
         
               
         
         return info;
     }
     
+   
+
 }
 

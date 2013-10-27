@@ -15,11 +15,11 @@
                 </p>
          </div>
         <form action="Controller">
-            <p>Title: <input type="text" name="title" value="${myMovies.data.title}"></p> 
-            <p>My Note: <input type="text" name="note" value="${myMovies.data.note}"></p> 
-            <p>Rating: <input type="text" name="rating" value="${myMovies.data.rating}"></p> 
+            <p>Title: <input type="text" name="title" value="${myMovies.movieData.title}"></p> 
+            <p>My Note: <input type="text" name="note" value="${myMovies.movieData.note}"></p> 
+            <p>Rating: <input type="text" name="rating" value="${myMovies.movieData.rating}"></p> 
 
-            <input type="submit" name="confirmButton" value="Confirm">
+            <input type="submit" name="confirmButton" value="Confirm" />
         </form>
     </body>
 </html>
