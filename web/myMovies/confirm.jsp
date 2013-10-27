@@ -14,9 +14,11 @@
         
 
         <form action="Controller" >
-            <input type="hidden" name="title" value="${myMovies.data.title}"> 
-            <input type="hidden" name="note" value="${myMovies.data.note}"> 
-            <input type="hidden" name="rating" value="${myMovies.data.rating}">
+            <input type="hidden" name="title" value="${myMovies.data.title}" /> 
+            <input type="hidden" name="note" value="${myMovies.data.note}" /> 
+            <input type="hidden" name="rating" value="${myMovies.data.rating}" />
+            <textarea type="hidden" name="embedCode" value=""${myMovies.data.emdedcode} /></p>
+
             <input type="submit" name="editButton" value="Edit" />
             <input type="submit" name="processButton" value="Process" />
         </form>
