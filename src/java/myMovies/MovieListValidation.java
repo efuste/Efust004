@@ -84,9 +84,9 @@ public class MovieListValidation {
                "<th> Movie Rating </th>\n" +
                "</tr>\n" + 
                "<tr>\n" + 
-               "<td>" + this.title + "</td>" + 
-               "<td>" + this.note + "</td>" + 
-               "<td>" + this.rating + "</td>" + 
+               "<td>" + this.getTitle() + "</td>" + 
+               "<td>" + this.getNote() + "</td>" + 
+               "<td>" + this.getRating() + "</td>" + 
                "</tr>\n" + 
                "</table>";
                        
