@@ -1,25 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<web-app xmlns="http://java.sun.com/xml/ns/javaee"
-	 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	 xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
-	 version="3.0">
-  <display-name>Homework for efust004</display-name>
-  <description>Homework application for efust004</description>
-  
-  <welcome-file-list>
-    <welcome-file>index.jsp</welcome-file>
-  </welcome-file-list>
-  
-  <servlet>
-      <servlet-name>MyMoviesController</servlet-name>
-      <servlet-class>myMovies.Controller</servlet-class>
-  </servlet>
-  
-  <servlet-mapping>
-      <servlet-name>MyMoviesController</servlet-name>
-      <url-pattern>/myMovies/Controller</url-pattern>
-  </servlet-mapping>
- 
+<web-app version="3.0" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+    <display-name>Homework for efust004</display-name>
+    <description>Homework application for efust004</description>
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+    <servlet>
+        <servlet-name>MyMoviesController</servlet-name>
+        <servlet-class>myMovies.Controller</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>MyMoviesController</servlet-name>
+        <url-pattern>/myMovies/Controller</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>hw2Movies</servlet-name>
+        <servlet-class>hw2.movies.Controller</servlet-class>
+        <init-param>
+            <param-name>logName</param-name>
+            <param-value>hw2.movies.log</param-value>
+        </init-param>
+        <init-param>
+            <param-name>logLevel</param-name>
+            <param-value>DEBUG</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>hw2Movies</servlet-name>
+        <url-pattern>/hw2/movies/Controller</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>InitLog4j</servlet-name>
+        <servlet-class>shared.InitLog4j</servlet-class>
+        <init-param>
+            <param-name>logPath</param-name>
+            <param-value>/WEB-INF/logs/errors.log</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    
     
 </web-app>
