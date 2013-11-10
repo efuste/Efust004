@@ -4,6 +4,9 @@
  */
 package hw2.movies;
 
+import java.text.NumberFormat;
+import javax.servlet.http.HttpServlet;
+import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 /**
  *
@@ -13,10 +16,26 @@ public class MovieListValidation {
     protected String title;
     protected String description;
     protected String rating;
-    protected int quanitity;
+    protected int quantity;
+    protected String embedCode;
     protected double price;
     
     protected Logger logger;
+    
+    public MovieListValidation() {
+           
+        logger = Logger.getLogger("errorhw2.movies.log");
+        logger.setLevel(Level.toLevel("DEBUG"));
+    
+    }
+    
+   
+    public String getEmbedCode() {
+        if(isValidEmbedCode()) {
+            return this.embedCode;
+        }
+        return "Movie Trailer Not Available";
+    }
     
     public String getTitle() {
         if(isValidMovieTitle()){
@@ -35,6 +54,8 @@ public class MovieListValidation {
     }
 
     public String getRating() {
+        logger.info("Inside the getRating() method");
+        
         if(isValidRating()){
             return this.rating;
         }
@@ -43,7 +64,7 @@ public class MovieListValidation {
     
     public int getQuantity() {
         if ( isValidQuantity()) {
-            return this.quanitity;
+            return this.quantity;
         }
         
         return 1;
@@ -52,6 +73,10 @@ public class MovieListValidation {
     public double getPrice() {
         return this.price;
     }
+    
+    public void setEmbedCode(String embedCode) {
+        this.embedCode = embedCode;
+    }
     public void setTitle(String title) {
         this.title = title;
     }
@@ -59,14 +84,13 @@ public class MovieListValidation {
     public void setDescription(String description) {
         this.description = description;
     }
-
+    
     public void setRating(String rating) {
-        logger.info("Inside setRating method of Bean");
         this.rating = rating;
     }
     
     public void setQuantity( int quantity ){
-        this.quanitity = quantity;
+        this.quantity = quantity;
     }
     
     public void setPrice ( double price ) {
@@ -74,32 +98,26 @@ public class MovieListValidation {
     }
     
     private boolean isValidQuantity() {
-        if ( this.quanitity > 0 ) {
-            return true;
-        }
         
-        return false;
+        return this.quantity> 0;
     }
     private boolean isValidMovieTitle() {
-       return this.title != null && !title.equals("");
+       return this.title != null && !this.title.equals(" ");
     }
     
     private boolean isValidMovieDescription() {
-        return this.description!= null && !description.equals("");
+        return this.description != null && !this.description.equals("");
     }
     
-   
-    public double getTotal() {
-        return this.quanitity * this.price;
-               
+    private boolean isValidEmbedCode() {
+        return this.embedCode != null && !this.embedCode.equals(" ");
     }
     
     private boolean isValidRating(){
         String[] ratings = { "NR", "G", "PG", "PG13", "R", "NC-17"};
-        
-        if(this.rating != null && !this.rating.equals(" ")){
-            for (int i = 0; i < ratings.length ; i++){
-                if(this.rating.replaceAll("\\W", "").equals(ratings[i])){
+        if(this.rating != null && !this.rating.equals("")){
+            for (String rating1 : ratings) {
+                if (this.rating.replaceAll("\\W", "").equals(rating1)) {
                     return true;
                 }
             }
@@ -107,26 +125,42 @@ public class MovieListValidation {
        return false;
     }
     
-  
+    public String getFormattedTotal() {
+        NumberFormat currency = NumberFormat.getCurrencyInstance();
+        return currency.format(this.getPotentialProfit());
+    }
+    
+    private double getPotentialProfit() {
+        return this.getQuantity() * this.getPrice();
+               
+    }
     public String getMovieInfo(){
         String info;
        
-        info = "<table>\n" +
-               "<tr>\n" + 
-               "<th> Movie Title </th>\n" +
-               "<th> My Description </th>\n" +
-               "<th> Movie Rating </th>\n" +
-                "<th> Quantity </th>\n" +
-                "<th> Price </th>\n" +
-               "</tr>\n" + 
-               "<tr>\n" + 
-               "<td>" + this.getTitle() + "</td>" + 
-               "<td>" + this.getDescription() + "</td>" + 
-               "<td>" + this.getRating() + "</td>" +
-                "<td>" + this.getQuantity() + "</td>" +
-                "<td>" + this.getPrice() + "</td>" +
-               "</tr>\n" + 
-               "</table>";
+        info = "<h2>" + this.getTitle() + "</h2>" +
+               "<div id=\"movie-trailer\">" + this.getEmbedCode() + "</div><br />" +
+               "<table>\n" +
+                    "<tr>\n" + 
+                        "<th> Movie Rating </th>\n" +
+                        "<th> Quantity </th>\n" +
+                        "<th> Price </th>\n" +
+                    "</tr>\n" + 
+                
+                    "<tr>\n" + 
+                        "<td>" + this.getRating() + "</td>" +
+                        "<td>" + this.getQuantity() + "</td>" +
+                        "<td>" + this.getPrice() + "</td>" +
+                   "</tr>\n" + 
+               "</table>" + 
+               
+                "<div id=\"movie-description\"> " +
+                    "<h4>Synopsis</h4>" + 
+                        "<p>" + this.getDescription() + "</p>" + 
+                "</div>";
+               
+       
+               
+                
                        
                
         

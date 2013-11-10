@@ -5,12 +5,11 @@
         <group>
             <file>file:/Applications/XAMPP/xamppfiles/htdocs/Efust004/web/WEB-INF/hw2/confirm.jsp</file>
             <file>file:/Applications/XAMPP/xamppfiles/htdocs/Efust004/web/WEB-INF/hw2/process.jsp</file>
-            <file>file:/Applications/XAMPP/xamppfiles/htdocs/Efust004/src/java/hw2/movies/Controller.java</file>
             <file>file:/Applications/XAMPP/xamppfiles/htdocs/Efust004/src/java/hw2/movies/ControllerHelper.java</file>
             <file>file:/Applications/XAMPP/xamppfiles/htdocs/Efust004/src/java/shared/HelperBaseCh4.java</file>
-            <file>file:/Applications/XAMPP/xamppfiles/htdocs/Efust004/web/WEB-INF/web.xml</file>
             <file>file:/Applications/XAMPP/xamppfiles/htdocs/Efust004/src/java/hw2/movies/MovieListValidation.java</file>
             <file>file:/Applications/XAMPP/xamppfiles/htdocs/Efust004/web/WEB-INF/hw2/edit.jsp</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/Efust004/web/WEB-INF/hw2/includes/header.jsp</file>
         </group>
     </open-files>
 </project-private>

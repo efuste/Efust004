@@ -1,11 +1,4 @@
-<!doctype html>
-<html>
-    <head>
-        <meta charset="utf-8" />
-        <title>Confirm Page</title>
-        <link rel="stylesheet" href="${request.contextPath}../styles/style.css" type="text/css" />
-
-    </head>
+<%@include file="includes/header.jsp" %>
     <body>
         <h3>Confirm Movie Information</h3>
         <div id="intro">
@@ -24,8 +17,6 @@
         <form action="Controller" >
             <input type="submit" name="editButton" value="Edit" />
             <input type="submit" name="processButton" value="Process" />
-            <input type="submit" name="wishListButton" value="Wish List" />
-
         </form>
        
         
